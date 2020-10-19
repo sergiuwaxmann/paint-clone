@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(177, 177, 177);
+  font-family: Oswald, sans-serif;
+  overflow: hidden;
+}
+
+.top-bar {
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  position: fixed;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+}
+
+/* Font Awesome Icons */
+.fas,
+.far {
+  cursor: pointer;
+  width: 40px;
+  padding: 5px;
+  position: relative;
+  top: 5px;
+  background-color: rgb(82, 82, 82);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.fas:hover,
+.far:hover {
+  filter: brightness(90%);
+}
+
+.fa-fill-drip {
+  cursor: default;
+}
+
+.fa-undo-alt:hover,
+.fa-trash-alt:hover {
+  color: rgb(223, 37, 37);
+}
+
+/* Tools */
+.active-tool {
+  position: absolute;
+  left: 5px;
+  top: 9px;
+}
+
+.active-tool > span {
+  padding: 2.5px 16px;
+  background-color: rgb(82, 82, 82);
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.tool {
+  position: relative;
+  top: 3px;
+}
+
+.tool:not(:first-child) {
+  margin-left: 8px;
+}
+
+.brush {
+  width: 345px;
+  height: 44px;
+  background-color: rgb(114, 114, 114);
+}
+
+.brush > * {
+  margin-left: 10px;
+}
+
+.size {
+  min-width: 40px;
+  height: 35px;
+  padding: 2.5px 8px;
+  position: relative;
+  left: -5px;
+  top: 4px;
+  background-color: rgb(82, 82, 82);
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+/* Custom Slider */
+.slider {
+  cursor: pointer;
+  width: 100px;
+  height: 10px;
+  position: relative;
+  left: -8px;
+  -webkit-appearance: none;
+  background: rgb(177, 177, 177);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(47, 47, 47);
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: rgb(47, 47, 47);
+}
+
+/* JS Color */
+.jscolor {
+  cursor: pointer;
+  width: 120px;
+  height: 35px;
+  margin-left: 3px;
+  text-align: center;
+  border-style: solid;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Canvas */
+canvas#canvas {
+  cursor: crosshair;
+  position: absolute;
+  top: 50px;
+  background-color: rgb(177, 177, 177);
+  z-index: 10;
+}
+
+/* Mobile Message */
+.mobile-message {
+  display: none;
+}
+
+/* Media Query: Mobile Devices */
+@media screen and (max-width: 800px) {
+  .mobile-message {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+}
